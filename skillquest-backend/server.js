@@ -18,6 +18,7 @@ connectDB();
 // Middleware
 app.use(cors({
   origin: [
+    'https://ifa-skillquest-9i2egeh7z-theajclub.vercel.app',
     'https://ifa-skillquest-ravs9e2lz-theajclub.vercel.app',
     'http://localhost:5173',
     'http://localhost:3000'
