@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "SkillQuest-mongodb-oauth/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "SkillQuest-mongodb-oauth/dist"
+      }
+    },
+    {
+      "src": "skillquest-backend/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "skillquest-backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "SkillQuest-mongodb-oauth/$1"
+    }
+  ]
+}
